@@ -1,0 +1,14 @@
+<%- include("partials/header"); %>
+<div class="overflow">
+<h1>Home</h1>
+<p><%= homeStartingContent %></p>
+<% posts.forEach((post) => { %>
+    <h1><%= post.title %></h1>
+    <% if (post.post.length > 100) { %>
+    <p><%= post.post.substring(0, 100) + ". . ." %><a class="more" href="/posts/<%= post.title.toLowerCase().replace(" ", "-") %>">Read More</a></p>
+    <% } else { %>
+        <%= post.post %>
+    <% } %>
+<% }); %>
+</div>
+<%- include("partials/footer"); %>
