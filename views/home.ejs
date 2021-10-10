@@ -1,12 +1,15 @@
-<%- include("partials/header"); %>
+<%- include('partials/header'); %>
     <h1>Home</h1>
     <p><%= homeStartingContent %></p>
     <% posts.forEach((post) => { %>
         <h1><%= post.title %></h1>
         <% if (post.post.length > 100) { %>
-        <p><%= post.post.substring(0, 100) + ". . ." %><a class="more" href="/posts/<%= post.title.toLowerCase().replace(" ", "-") %>">Read More</a></p>
+        <p>
+            <%= post.post.substring(0, 100) + '. . .' %>
+            <a class="readmore" href="/posts/<%= post.title.toLowerCase().replace(' ', '-') %>">Read More</a>
+        </p>
         <% } else { %>
             <%= post.post %>
         <% } %>
     <% }); %>
-<%- include("partials/footer"); %>
+<%- include('partials/footer'); %>
