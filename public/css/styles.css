@@ -48,7 +48,7 @@
 
 .overflow {
     max-height: 72vh;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 /* .overflow::-webkit-scrollbar {
